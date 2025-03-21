@@ -12,7 +12,7 @@ beforeEach(() => {
 });
 
 test('check ease add', () => {
-  cart.add('3');
+  cart.add('4');
   expect(cart.basket).toStrictEqual({ '1': 1 });
 });
 
