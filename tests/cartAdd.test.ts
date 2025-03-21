@@ -12,8 +12,8 @@ beforeEach(() => {
 });
 
 test('check ease add', () => {
-  cart.add('1');
- 
+  cart.add('2');
+  expect(cart.basket).toStrictEqual({ '1': 1 });
 });
 
 test('check fake name', () => {
