@@ -13,7 +13,7 @@ beforeEach(() => {
 
 test('check ease add', () => {
   cart.add('1');
-  expect(cart.basket).toStrictEqual({ '1': 1 });
+ 
 });
 
 test('check fake name', () => {

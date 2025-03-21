@@ -4,4 +4,5 @@ import './assets/svg/empty-cart-icon.svg';
 import App from './ts/app';
 
 const app = new App();
-app.start();
+app.
+start();
