@@ -1,0 +1,22 @@
+name: Branch Name Check
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  check-branch-name:
+    name: Check Branch Name
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch name
+        run: |
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          
+          if [[ ! $BRANCH_NAME =~ ^feature/ ]]; then
+            echo "Error: Branch name must start with 'feature/'. Current name: $BRANCH_NAME"
+            exit 1
+          else
+            echo "All oks: $BRANCH_NAME"
+          fi 
