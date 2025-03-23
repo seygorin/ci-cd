@@ -1,3 +1,5 @@
+@use '../abstracts/variables';
+
 .body__wrapper {
   display: flex;
   flex-direction: column;
@@ -12,4 +14,15 @@
 
 .body_hold {
   overflow: hidden;
+}
+
+.filter__title {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.range-min,
+.range-max {
+  min-height: 24px;
+  min-width: 24px;
 }
