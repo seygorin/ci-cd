@@ -43,6 +43,7 @@ module.exports = {
       patterns: [
         { from: 'src/assets', to: 'assets' },
         { from: 'src/data/plants', to: 'assets/img/plants' },
+        { from: 'src/assets/fonts', to: 'assets/fonts' },
         { from: path.resolve(__dirname, '_redirects'), to: '' },
       ],
     }),
@@ -74,7 +75,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.woff2?$/i,
+        test: /\.(woff2?|ttf)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'fonts/[name][ext]',
