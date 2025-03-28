@@ -1,4 +1,4 @@
-@use "../abstracts/variables";
+@use '../abstracts/variables';
 
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
@@ -9,12 +9,14 @@
   position: relative;
   background-color: variables.$black;
   color: variables.$white-medium;
+  margin-top: auto;
 }
 
 .footer__container {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 100px;
+
+  min-height: 200px;
 }
 
 .footer__column {

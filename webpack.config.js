@@ -43,6 +43,7 @@ module.exports = {
       patterns: [
         { from: 'src/assets', to: 'assets' },
         { from: 'src/data/plants', to: 'assets/img/plants' },
+        { from: 'src/assets/fonts', to: 'assets/fonts' },
         { from: path.resolve(__dirname, '_redirects'), to: '' },
       ],
     }),
@@ -62,19 +63,10 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              implementation: require('sass'),
-            },
-          },
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.woff2?$/i,
+        test: /\.(woff2?|ttf)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'fonts/[name][ext]',
@@ -88,6 +80,7 @@ module.exports = {
             options: {
               mozjpeg: {
                 progressive: true,
+                quality: 65,
               },
               optipng: {
                 enabled: false,
@@ -105,7 +98,12 @@ module.exports = {
             },
           },
         ],
-        type: 'asset/resource',
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 8 * 1024, // 8kb
+          },
+        },
       },
       {
         test: /\.m?js$/i,
